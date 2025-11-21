@@ -19,7 +19,7 @@ body {
   padding: 20px 10%;
   background: transparent;
   display: flex; /*Todo en horizontal*/
-  justify-content: space-between; /*Espaciado de componentes*/
+  justify-content: space-between;
   align-items: center;
   z-index: 100;
   transition: background 0.3s ease;
@@ -345,7 +345,7 @@ body {
   z-index: 100;
 }
 
-/* KEYFRAMES ANIMATION */
+/* KEYFRAMES ANIMACION */
 @keyframes showRight {
   100% {
     width: 0;
@@ -533,5 +533,364 @@ body {
 
   .home-content p {
     font-size: 18px;
+  }
+}
+
+.section {
+  min-height: 100vh;
+  padding: 100px 10%;
+  background: #081b29;
+  color: #ededed;
+}
+
+/* Vistas estilo SPA */
+.view {
+  display: none;
+}
+
+/* Sólo la vista activa es visible */
+.view.active {
+  display: block;
+}
+
+
+.section {
+  min-height: calc(100vh - 80px);
+  padding: 120px 10% 60px; /* margen por header fijo */
+  background: #081b29;
+  color: #ededed;
+}
+
+.section h2 {
+  font-size: 36px;
+  color: #00abf0;
+  margin-bottom: 16px;
+}
+
+
+.section:nth-child(even) {
+  background: #0c2f45;
+}
+
+.section h2 {
+  font-size: 36px;
+  color: #00abf0;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Vistas estilo SPA */
+.view {
+  display: none;
+}
+
+/* Sólo la vista activa es visible */
+.view.active {
+  display: block;
+}
+
+/* Estilo base para las vistas “no home” para que se vean bien */
+.section {
+  min-height: calc(100vh - 80px);
+  padding: 120px 10% 60px;
+  background: #081b29;
+  color: #ededed;
+}
+
+.section h2 {
+  font-size: 36px;
+  color: #00abf0;
+  margin-bottom: 16px;
+}
+
+
+:root {
+  --header-height: 80px;  /* el header es alto y bajo dependiendo de esto */
+}
+
+/* color de fondo por decirlo global por si queda alguna zona sin cubrir */
+body {
+  background: #081b29;
+}
+
+/* HOME que no quede tapado por el header fijo */
+.home {
+  padding-top: calc(var(--header-height) + 40px); /* espacio cómodo debajo del header */
+  min-height: 100vh; /* asegura que llena la pantalla */
+}
+
+/* Vistas internas: ocupan pantalla completa y sin franja blanca abajo */
+.view {
+  min-height: 100vh;
+  display: none;
+}
+.view.active {
+  display: block;
+}
+
+/* Secciones internas  */
+.section {
+  /* el padding-top compensa el header fijo; el resto es espacio de contenido */
+  padding: calc(var(--header-height) + 40px) 10% 60px;
+  background: #081b29;
+  color: #ededed;
+}
+
+/* Esto es mas opcional si es que esta en ajuste en pantallas pequeñas: un poco menos de padding */
+@media (max-width: 768px) {
+  :root { --header-height: 70px; }
+  .home { padding-top: calc(var(--header-height) + 24px); }
+  .section { padding: calc(var(--header-height) + 24px) 6% 40px; }
+}
+
+/* ------ SOBRE MÍ ------ */
+.sobre-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #081b29;
+  color: #ededed;
+  padding: calc(var(--header-height) + 60px) 10% 60px;
+}
+
+.sobre-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 50px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+.sobre-texto {
+  flex: 1 1 500px;
+}
+
+.sobre-texto h2 {
+  font-size: 36px;
+  color: #00abf0;
+  margin-bottom: 20px;
+}
+
+.sobre-texto p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.sobre-imagen {
+  flex: 1 1 350px;
+  display: flex;
+  justify-content: center;
+}
+
+.sobre-imagen img {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  object-fit: cover;
+}
+
+/* Vista móvil */
+@media (max-width: 768px) {
+  .sobre-content {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .sobre-imagen img {
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+}
+
+/* ------ PERIODO 25-II ------ */
+.periodo-section {
+  background: #081b29;
+  color: #ededed;
+  padding: calc(var(--header-height) + 60px) 10% 60px;
+  min-height: 100vh;
+}
+
+.periodo-section h2 {
+  font-size: 36px;
+  color: #00abf0;
+  margin-bottom: 20px;
+}
+
+.periodo-section p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.tabla-cursos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.curso-card {
+  background: #0c2f45;
+  border: 1px solid #00abf0;
+  border-radius: 12px;
+  padding: 25px;
+  width: 100%;
+  max-width: 330px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.curso-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.curso-card h3 {
+  font-size: 22px;
+  color: #00abf0;
+  margin-bottom: 10px;
+}
+
+.curso-card p {
+  margin: 6px 0;
+}
+
+/* Enlace de LinkedIn */
+.linkedin-link {
+  color: #00abf0;
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.linkedin-link:hover {
+  color: #0092d6;
+  text-decoration-thickness: 2px;
+}
+
+.curso-card .descripcion {
+  margin-top: 10px;
+  font-style: italic;
+  color: #b5c3d1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .tabla-cursos {
+    justify-content: center;
+  }
+}
+
+
+/* ------ COMPAÑEROS ------ */
+.companeros-section {
+  background: #081b29;
+  color: #ededed;
+  text-align: center;
+  padding: calc(var(--header-height) + 60px) 10% 60px;
+  min-height: 100vh;
+}
+
+.companeros-section h2 {
+  font-size: 36px;
+  color: #00abf0;
+  margin-bottom: 20px;
+}
+
+.companeros-section p {
+  font-size: 16px;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.companeros-lista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.comp-link {
+  font-size: 20px;
+  font-weight: 600;
+  color: #00abf0;
+  text-decoration: underline;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.comp-link:hover {
+  color: #0092d6;
+  transform: scale(1.05);
+  text-decoration-thickness: 2px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .comp-link {
+    font-size: 18px;
+  }
+}
+
+/* ------ CONTACTO ------ */
+.contacto-section {
+  background: #081b29;
+  color: #ededed;
+  text-align: center;
+  padding: calc(var(--header-height) + 60px) 10% 60px;
+  min-height: 100vh;
+}
+
+.contacto-section h2 {
+  font-size: 36px;
+  color: #00abf0;
+  margin-bottom: 20px;
+}
+
+.contacto-section p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 30px;
+}
+
+.contacto-contenido h3 {
+  font-size: 22px;
+  color: #00abf0;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.linkedin-icono {
+  display: inline-block;
+  font-size: 60px;
+  color: #00abf0;
+  transition: color 0.3s ease, transform 0.3s ease;
+  margin-bottom: 25px;
+}
+
+.linkedin-icono:hover {
+  color: #0092d6;
+  transform: scale(1.1);
+}
+
+.correo {
+  font-size: 18px;
+  color: #ededed;
+  margin-top: 5px;
+}
+
+/* Ajustes responsive */
+@media (max-width: 768px) {
+  .linkedin-icono {
+    font-size: 50px;
+  }
+  .correo {
+    font-size: 16px;
   }
 }
