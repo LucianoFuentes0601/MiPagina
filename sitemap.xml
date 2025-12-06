@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    <url>
-        <loc>https://lucianofuentes0601.github.io/MiPagina/</loc>
-        <lastmod>2023-11-01</lastmod>
-        <priority>1.0</priority>
-    </url>
+
+  <url>
+    <loc>https://lucianofuentes0601.github.io/MiPagina/</loc>
+    <lastmod>2025-12-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
 </urlset>
